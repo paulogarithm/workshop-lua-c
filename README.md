@@ -1,7 +1,12 @@
 <h1 align=center> Lua x C </h1>
-How do you bind lua with C ? Here is some exercises to do it !
 
-## Titre
+> [!IMPORTANT]
+> This workshop is about the **lua** programming language. A little lua knowledge is requiered to do this workshop.<br/>
+> You will also need C or C++ knowledges.
+> 
+> If you never touched lua in your life, you should follow the negative tasks before. Else, go directly to [1](##my-first-module);
+
+## `-1` | A lua world
 
 > [!NOTE]
 > Ceci est une note
@@ -16,7 +21,7 @@ How do you bind lua with C ? Here is some exercises to do it !
 > Ceci est un message important
 
 > [!WARNING]
-> Cecu est un warning
+> Ceci est un warning
 
 ![progression](https://geps.dev/progress/32?dangerColor=9c6bff&warningColor=389bfc&successColor=38fc80) 
 
@@ -30,4 +35,5 @@ progression: ${\textsf{\color{red}━━━━╸}}$━━━━━━━━━�
 
 `progression: ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
 
+## My first module
 
