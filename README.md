@@ -35,5 +35,16 @@ progression: ${\textsf{\color{red}━━━━╸}}$━━━━━━━━━�
 
 `progression: ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
 
-## 1 | My First Module
+## `1` | My First Module
+> ${\textsf{\color{red}╸}}$━━━━━━━━━━━━━━━━━━━
+
+See this little bar ? This is your lua skills that are upgrading !
+
+You will first have to create 
+
+```lua
+local foo = require("mymodule.so")
+
+print(foo) -- 42
+```
 
