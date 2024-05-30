@@ -244,9 +244,9 @@ int luaopen_coolmodule(lua_State *L) // 'coolmodule' is the name of your module 
 | others | `gcc -shared -fpic module.c -llua -lm -o module.so`    |
 
 ## `1` | My First Module
-> ${\textsf{\color{#f00}╸}}$━━━━━━━━━━━━━━━━━━━
+> ${\textsf{\color{#f00}╸}}$━━━━━━━━━━━━━━━━━━━ `0xp`
 
-See this little bar ? This is your lua skills that are upgrading !
+See this little bar ? This is your lua skills that are upgrading ! Each steps 
 
 You will first have to create a module that returns a number:
 ```lua
@@ -256,7 +256,7 @@ print(foo) -- 42
 ```
 
 ## `2` | Your own adder !
-> ${\textsf{\color{#c04}━━╸}}$━━━━━━━━━━━━━━━━━
+> ${\textsf{\color{#c04}━╸}}$━━━━━━━━━━━━━━━━━━ `10xp`
 
 Hey see your lua skills ! They upgraded ! Now let's create a simple adder.
 
@@ -277,6 +277,8 @@ adder:display() -- 0
 
 > [!TIP]
 > Did you know you can apply `metatable` to a light user data ?
+>
+> The __index metamethod is definetely usefull !
 
 3. Make a function that increments your adder value:
 ```lua
@@ -298,8 +300,8 @@ adder:display()     -- 4
 > Did you know that passing 0 parametters is like giving `nil` as
 > parametter ?
 
-## `3` | An upgraded Adder
-> ${\textsf{\color{#808}━━━━╸}}$━━━━━━━━━━━━━━━
+## `3` | An Adder with a capital 'A'
+> ${\textsf{\color{#808}━━━━━╸}}$━━━━━━━━━━━━━━ `50xp`
 
 Wow, ok you are definetely getting great at lua, however, would you pass this one ?
 
@@ -327,8 +329,56 @@ print(adder) -- 12
 > [!TIP]
 > You should definitely check out the new `__tostring` metamethod, it's an absolute banger what it can do !
 
-## `4` | 
-> ${\textsf{\color{#44f}━━━━━━╸}}$━━━━━━━━━━━━━
+## `4` | My Window
+> ${\textsf{\color{#40f}━━━━━━━╸}}$━━━━━━━━━━━━ `70xp`
 
-## `5` | 
-> ${\textsf{\color{#08f}━━━━━━━━╸}}$━━━━━━━━━━━
+Wait, I just realised something... it's useless to do an adder, since you already have the lua variables to do it !
+
+Instead I will do something funnier !
+
+Do you remember you Tek1 bsq/setting up ? Do you still have it ? Perfect! Because we are not gonna use it.
+
+Instead, you will encapsulate any graphical C/C++ library of your choice. 
+
+Don't worry you don't have to create everything, just 2 simple things:
+
+1. A `createWindow` method to create a new window, which takes the title and the size.
+
+2. An implicite destructor that clears your window, which is called at the end of the file.
+
+> [!TIP]
+> Destructor ? Does it exist a metamethod for destruction in lua ?
+
+Walkthrough:
+
+1. You should create a simple function that returns a new light user data.
+
+2. Then you can set the userdata to a new window.
+
+3. Then you can try to apply metamethod to the userdata with the destructor.
+
+4. And then you are done !
+
+Here is a code snippet that you should base your work on:
+```lua
+local Graphics = require("coolmodule")
+
+local window = Graphics.createWindow("foo", 800, 600)
+print(type(window))
+os.execute("sleep 3")
+print("foo")
+```
+
+It should outputs:
+```c
+userdata
+// waits for 3 seconds
+foo
+destructor
+```
+
+And here is a little video:
+![](./assets/video.webm)
+
+## `5` | The role changed...
+> ${\textsf{\color{#08f}━━━━━━━━━━━━╸}}$━━━━━━━━━━ `120xp`
