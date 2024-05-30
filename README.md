@@ -1,5 +1,9 @@
 <h1 align=center> Lua x C </h1>
 
+|Workshop's Difficulty|
+|----------|
+| ▰▰▰▱ Insane :fire: |
+
 > [!IMPORTANT]
 > This workshop is about the **lua** programming language. A little lua
 > knowledge is requiered to do this workshop.<br/>
