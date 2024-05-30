@@ -9,7 +9,7 @@
 > [`negative tasks`](#-1--a-lua-world) before.
 > Else, go directly to [`ground zero`](#0--prerequisites-met);
 
-> [!INFO]
+> [!NOTE]
 > This part of lua are advanced mechanics, so feel free to ask me if you
 > need help !
 
