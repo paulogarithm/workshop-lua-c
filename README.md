@@ -40,8 +40,7 @@ progression: ${\textsf{\color{red}━━━━╸}}$━━━━━━━━━�
 
 See this little bar ? This is your lua skills that are upgrading !
 
-You will first have to create 
-
+You will first have to create a module that returns a number:
 ```lua
 local foo = require("mymodule.so")
 
