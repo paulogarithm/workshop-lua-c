@@ -4,7 +4,7 @@
 > This workshop is about the **lua** programming language. A little lua knowledge is requiered to do this workshop.<br/>
 > You will also need C or C++ knowledges.
 > 
-> If you never touched lua in your life, you should follow the negative tasks before. Else, go directly to [1](##My-First-Module);
+> If you never touched lua in your life, you should follow the negative tasks before. Else, go directly to [1](#1-|-my-first-module);
 
 ## `-1` | A lua world
 
@@ -35,5 +35,5 @@ progression: ${\textsf{\color{red}━━━━╸}}$━━━━━━━━━�
 
 `progression: ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
 
-## My First Module
+## 1 | My First Module
 
