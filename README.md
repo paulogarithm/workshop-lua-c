@@ -377,8 +377,7 @@ foo
 destructor
 ```
 
-And here is a little video:
-![](./assets/video.mp4)
+And here is a little [video](./assets/video.mp4)
 
 ## `5` | The role changed...
 > ${\textsf{\color{#08f}━━━━━━━━━━━━╸}}$━━━━━━━━━━ `120xp`
