@@ -278,7 +278,7 @@ adder:display() -- 0
 > [!TIP]
 > Did you know you can apply `metatable` to a light user data ?
 >
-> The __index metamethod is definetely usefull !
+> The `__index` metamethod is definetely usefull !
 
 3. Make a function that increments your adder value:
 ```lua
@@ -327,7 +327,7 @@ adder:increment(12)
 print(adder) -- 12
 ```
 > [!TIP]
-> You should definitely check out the new `__tostring` metamethod, it's an absolute banger what it can do !
+> I heard about a super metamethod called `__tostring`, it's an absolute banger what can it do, I think you should check for it :eyes:
 
 ## `4` | My Window
 > ${\textsf{\color{#40f}━━━━━━━╸}}$━━━━━━━━━━━━ `70xp`
