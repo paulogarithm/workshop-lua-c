@@ -7,11 +7,14 @@
 > 
 > If you never touched lua in your life, you should follow the
 > [`negative tasks`](#-1--a-lua-world) before.
-> Else, go directly to [`ground zero`](#0--building-lua);
+> Else, go directly to [`ground zero`](#0--prerequisites-met);
 
 > [!TIP]
 > This part of lua are advanced mechanics, so feel free to ask me if you
 > need help !
+
+<details>
+    <summary>  Lua crash course: </summary>
 
 ## `-1` | A lua world
 
@@ -146,11 +149,65 @@ Now we can improve our psychopath's factorial:
 f=function(n)return n<=0 and 1 or n*f(n-1)end
 ```
 
-## `-3` | Tables ~~and chairs~~
+## `-4` | Tables ~~and chairs~~
 
-Tables are the most 
+Tables are the most important mechanics in lua. It allows user to store any `value` at a given `key`. The key can be litterally anything.
 
-## `0` | Building lua
+To create a table, you just need to use `{}`. By default, if you don't give a key, it acts like an array, and the key are `1, 2, 3...`
+
+```lua
+local fruits = { "banana", "apple", "mango" }
+print(fruits[1]) -- banana (not apple)
+```
+
+If your key is a string, you can access it with a dot:
+```lua
+local me = {
+    money = 0,
+    bitches = 0,
+    int32limit = 2147483647
+}
+me.charism = 0
+print(me.bitches) -- 0
+```
+
+You can also loop through the tables using the for loop:
+```lua
+for key, value in pairs(me) do
+    print(key, value) -- money 0, bitches 0, ...
+end
+```
+
+Tables can have functions in it, which is interesting in OOP mechanics.
+
+So to call them, you can just call them with `.`, but if you need to actually get the table used to call the function, you can use `:` and you will get the `self` variable.
+```lua
+local me = {
+    age = 19,
+    name = "pol"
+}
+
+function me.sayHi()
+    print("Hi")
+end
+
+function me:birthday()
+    self.age = self.age + 1
+end
+
+me.sayHi() -- Hi
+print(me.age) -- 19
+me:birthday()
+print(me.age) -- 20
+```
+
+You can also use something that is called metatables to actually give tables funny attributes. But I let you search by your own.
+
+Finally ! Now you can start the workshop !
+
+</details>
+
+## `0` | Prerequisites met
 
 1. Install lua using the following table:
 
@@ -187,15 +244,91 @@ int luaopen_coolmodule(lua_State *L) // 'coolmodule' is the name of your module 
 | others | `gcc -shared -fpic module.c -llua -lm -o module.so`    |
 
 ## `1` | My First Module
-> ${\textsf{\color{red}╸}}$━━━━━━━━━━━━━━━━━━━
+> ${\textsf{\color{#f00}╸}}$━━━━━━━━━━━━━━━━━━━
 
 See this little bar ? This is your lua skills that are upgrading !
 
 You will first have to create a module that returns a number:
 ```lua
-local foo = require("coolmodule.so")
+local foo = require("coolmodule")
 
 print(foo) -- 42
 ```
 
-## `2` | 
+## `2` | Your own adder !
+> ${\textsf{\color{#c04}━━╸}}$━━━━━━━━━━━━━━━━━
+
+Hey see your lua skills ! They upgraded ! Now let's create a simple adder.
+
+So your goal is to create a adder, which is how I want to store my number in the super game i'm developping.
+
+I should be able to increment my variable stored in my adder object. This is how you would do it !
+
+1. Create a new userdata type
+```lua
+local adder = require("coolmodule")
+print(type(adder)) -- userdata
+```
+
+2. Make your userdata store a int variable and display it:
+```lua
+adder:display() -- 0
+```
+
+> [!TIP]
+> Did you know you can apply `metatable` to a light user data ?
+
+3. Make a function that increments your adder value:
+```lua
+adder:display() -- 0
+adder:increment()
+adder:display() -- 1
+```
+
+4. Make your function take an optionnal parametter that is the number it can holds:
+```lua
+adder:display()     -- 0
+adder:increment()
+adder:display()     -- 1
+adder:increment(3)
+adder:display()     -- 4
+```
+
+> [!TIP]
+> Did you know that passing 0 parametters is like giving `nil` as
+> parametter ?
+
+## `3` | An upgraded Adder
+> ${\textsf{\color{#808}━━━━╸}}$━━━━━━━━━━━━━━━
+
+Wow, ok you are definetely getting great at lua, however, would you pass this one ?
+
+Ok so I want to have multiple and individuals Adder in my game, so can you make me a Adder class that allows me to create multiple adders !
+
+```lua
+local Adder = require("coolmodule")
+
+local adder1 = Adder.new()
+adder1:increment(42)
+
+local adder2 = Adder.new()
+adder2:increment(69)
+
+adder2:display() -- 69
+adder1:display() -- 42
+```
+
+Hmm ok this looks kind of what I want, can  you now (please) make it printable ?
+```lua
+local adder = require("coolmodule").new()
+adder:increment(12)
+print(adder) -- 12
+```
+> [!TIP]
+> You should definitely check out the new `__tostring` metamethod, it's an absolute banger what it can do !
+
+## `4` | 
+> ${\textsf{\color{#44f}━━━━━━╸}}$━━━━━━━━━━━━━
+
+## `5` | 
+> ${\textsf{\color{#08f}━━━━━━━━╸}}$━━━━━━━━━━━
