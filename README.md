@@ -56,7 +56,7 @@ Lua have 8 (or 9 it depends how you count) types:
 
 So normally you should understand the types from nil to thread.
 
-The other ones are the ones we are mostly gonna use in this workshop.
+The bottom ones are the types we are mostly gonna use in this workshop.
 
 However, we have to see more basics before.
 
@@ -93,7 +93,7 @@ else
     print("sticky again")
 end
 ```
-If checks for a `non-nil` and `not false` value.
+The `if` statements checks for a `non-nil` and `not false` value.
 
 ```lua
 if nil then -- wont do
