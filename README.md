@@ -6,15 +6,16 @@
 > You will also need C or C++ knowledges.
 > 
 > If you never touched lua in your life, you should follow the
-> [`negative tasks`](#-1--a-lua-world) before.
+> [`negative tasks`](#negative-tasks) before.
 > Else, go directly to [`ground zero`](#0--prerequisites-met);
 
 > [!NOTE]
 > This part of lua are advanced mechanics, so feel free to ask me if you
 > need help !
 
+## Negative tasks
 <details>
-    <summary>  Lua crash course: </summary>
+    <summary>  Click here ! </summary>
 
 ## `-1` | A lua world
 
