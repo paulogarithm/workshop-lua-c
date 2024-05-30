@@ -15,20 +15,24 @@
 
 1. Install lua using the following table:
 
-|        | installation command             | compilation command                                |
-|--------|----------------------------------|----------------------------------------------------|
-| dnf    | `sudo dnf install lua-devel -y`  | `gcc -shared -fpic module.c -llua -o module.so`    |
-| apt    | `sudo apt install liblua5.4-dev` | `gcc -shared -fpic module.c -llua5.4 -o module.so` |
-| pacman | `sudo pacman -Syu lua`           | `gcc -shared -fpic module.c -llua -o module.so`    |
-| brew   | `sudo brew install lua`          | `gcc -shared -fpic module.c -llua -o module.so`    |
+|        | installation command             |
+|--------|----------------------------------|
+| dnf    | `sudo dnf install lua-devel -y`  |
+| apt    | `sudo apt install liblua5.4-dev` |
+| pacman | `sudo pacman -Syu lua`           |
+| brew   | `sudo brew install lua`          |
 
 2. Export the lua cpath like so
 ```sh
 export LUA_CPATH="$(pwd)/?.so;;"
 ```
 
-3. Compile the lua 
+3. Compile the lua using the following table:
 
+|        | compilation command                                    |
+|--------|--------------------------------------------------------|
+| apt    | `gcc -shared -fpic module.c -llua5.4 -lm -o module.so` |
+| others | `gcc -shared -fpic module.c -llua -lm -o module.so`    |
 
 ## `1` | My First Module
 > ${\textsf{\color{red}╸}}$━━━━━━━━━━━━━━━━━━━
