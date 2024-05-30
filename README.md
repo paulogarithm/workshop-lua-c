@@ -378,7 +378,7 @@ destructor
 ```
 
 And here is a little video:
-![](./assets/video.webm)
+![](./assets/video.mp4)
 
 ## `5` | The role changed...
 > ${\textsf{\color{#08f}━━━━━━━━━━━━╸}}$━━━━━━━━━━ `120xp`
