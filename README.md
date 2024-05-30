@@ -377,9 +377,7 @@ foo
 destructor
 ```
 
-Here is a little video:
-
-https://github.com/paulogarithm/workshop-lua-c/assets/video.mp4
+Here is a little [video](./assets/video.mp4)
 
 ## `5` | The role changed...
 > ${\textsf{\color{#08f}━━━━━━━━━━━━╸}}$━━━━━━━━━━ `120xp`
