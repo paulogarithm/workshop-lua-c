@@ -2,7 +2,7 @@
 
 |Workshop's Difficulty|
 |----------|
-| ▰▰▰▱ Insane :fire: |
+| ▰▰▰▱ Hard :fire: |
 
 > [!IMPORTANT]
 > This workshop is about the **lua** programming language. A little lua
