@@ -420,11 +420,12 @@ Here is a little [video](./assets/video.mp4)
 ## `5` | The role changed...
 > ${\textsf{\color{#08f}━━━━━━━━━━━━╸}}$━━━━━━━━━━ `120xp`
 
-OK so you learnt how to do C in your lua, but do you know you can do the opposite ?
+OK so you learnt how to do C in your lua, (or not) but do you know you can do the opposite ?
 
-That's right, so basically, it's like a huge bonus to include some lua in your code. And when you will see how to, you will be surprised to see how it is simple.
+It's like a huge bonus to include some lua in your code, like in RPG or Minishell.
+And when you will see how to do that, you will be surprised to see how it is simple.
 
-Now here is your C code
+Now here is your starter C code:
 ```c
 #include <lua.h>
 #include <lauxlib.h>
@@ -436,16 +437,20 @@ int main(void)
 }
 ```
 
-1. First, you will create a `new` lua_State *. Don't forget to `close` it at the end, and `open` the `libs` in your state !
+### Walkthrough
+
+1. First, you will create a **new** lua_State *. <br>
+Don't forget to **close** it at the end, and **open the libs** in your state !
 
 > [!TIP]
-> The name of the functions you will have to use are really intuitive.
->
-> There are 3 of them, and don't forget to check `lua_` and `luaL_` functions.
+> The name of the functions you will have to use are really intuitive. <br>
+> There are 3 functions to use in the first exercise, and don't forget to check `lua_` AND `luaL_` functions.
 
-2. Now that you have you lua state, you will have to use it to do the following extremely complicated code: `print(1 + 1)`.
-
-It should output 2.
+2. Now that you have you lua state, you will have to use it to do the following extremely complicated code:
+```lua
+print(1 + 1)
+```
+It should output `2` in the standard output.
 
 ## `6` | Closuring and Tableing
 > ${\textsf{\color{#0A8}━━━━━━━━━━━━━━━╸}}$━━━━━━━ `150xp`
@@ -507,7 +512,7 @@ It needs to have the **same keys and same values**.
 ## `7` | [Do you wanna build a snowman](https://www.youtube.com/watch?v=TeQ_TTyLGMs) ?
 > ${\textsf{\color{#0C4}━━━━━━━━━━━━━━━━━━╸}}$━━━━ `180xp`
 
-To be honnest I don't want either Elza, I just said this so I can use this sentence to write a workshop.
+To be honnest I don't want either Elza, I just said this so I can steal your quote to write a workshop.
 
 Anyways, you will have to create a snowman in your lua state.
 
@@ -516,8 +521,7 @@ Anyways, you will have to create a snowman in your lua state.
 2. It is also really cold so when I print my snowman it should display `A really cold snowman.`
 
 > [!TIP]
-> If you skipped the preceding tasks, know that you will need to use `metatables` for this task.
->
+> If you skipped the preceding tasks, know that you will need to use `metatables` for this task. <br>
 > Go see what it is and how to use it, but you should watch one in particulary named `__tostring`.
 
 3. My snowman is also a global variable, so i can access it everywhere.
