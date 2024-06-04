@@ -253,11 +253,32 @@ int luaopen_coolmodule(lua_State *L) // 'coolmodule' is the name of your module 
 
 See this little bar ? This is your lua skills that are upgrading ! Each steps 
 
-You will first have to create a module that returns a number:
+1. You will first have to create a module that returns a number:
 ```lua
 local foo = require("coolmodule")
 
 print(foo) -- 42
+```
+
+2. You will then return a little C function you can call in lua:
+```lua
+local foo = require("coolmodule")
+
+foo() -- Hello world !
+```
+
+3. Perfect ! Now return a table
+
+> [!INFO]
+> (if you don't know what a table is, you should definitely look back at [`negative tasks`](#negative-tasks))
+
+You table should contains 1 little method and 1 little variable:
+```lua
+local foo = require("coolmodule")
+print(foo.number) -- 42
+foo:get() -- My number is 42
+foo.number = 13
+foo:get() -- My number is 13
 ```
 
 ## `2` | Your own adder !
@@ -269,9 +290,10 @@ So your goal is to create a adder, which is how I want to store my number in the
 
 I should be able to increment my variable stored in my adder object. This is how you would do it !
 
-1. Create a new userdata type
+1. Create a new userdata type:
 ```lua
 local adder = require("coolmodule")
+
 print(type(adder)) -- userdata
 ```
 
@@ -281,7 +303,8 @@ adder:display() -- 0
 ```
 
 > [!TIP]
-> Did you know you can apply `metatable` to a light user data ?
+> Did you know you can apply a `metatable` to a light user data ?
+> It will then act like a table, but `self` will be you pointer.
 >
 > The `__index` metamethod is definetely usefull !
 
@@ -386,3 +409,21 @@ Here is a little [video](./assets/video.mp4)
 
 ## `5` | The role changed...
 > ${\textsf{\color{#08f}━━━━━━━━━━━━╸}}$━━━━━━━━━━ `120xp`
+
+OK so you learnt how to do C in your lua, but do you know you can do the opposite ?
+
+That's right, so basically, it's like a huge bonus to include some lua in your code. And when you will see how to, you will be surprised to see how it is simple.
+
+Now here is your C code
+```c
+#include <lua.h>
+#include <lauxlib.h>
+#include <lualib.h>
+
+int main(void)
+{
+    return 0;
+}
+```
+
+1. First, you will create a new state.
