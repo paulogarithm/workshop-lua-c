@@ -16,8 +16,8 @@
 > [!IMPORTANT]
 > This workshop is made with **2 STEPS**. It's hard to do both, so you can chose
 > which one you want to do first:
-> - [C in Lua](#c-in-lua)
-> - [Lua in C](#lua-in-c)
+> - [C in Lua](#step-1---c-in-your-lua)
+> - [Lua in C](#step-2---lua-in-your-c)
 
 > [!NOTE]
 > This part of lua are advanced mechanics, so feel free to ask me if you
