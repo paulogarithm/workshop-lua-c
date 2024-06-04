@@ -139,9 +139,9 @@ false or nil -- nil
 `and` will do the opposite and return the first nil or false value he found, else it returns the last value:
 ```lua
 false and 3 -- false
-42 or 53 -- 53
-nil or false -- nil
-false or nil -- false
+42 and 53 -- 53
+nil and false -- nil
+false and nil -- false
 ```
 
 So using this, you can do ternary like that:
@@ -165,15 +165,18 @@ local fruits = { "banana", "apple", "mango" }
 print(fruits[1]) -- banana (not apple)
 ```
 
-If your key is a string, you can access it with a dot:
+If your key is a string, you can set/get it with a dot. By default, it's set as nil:
 ```lua
 local me = {
     money = 0,
     bitches = 0,
     int32limit = 2147483647
 }
-me.charism = 0
 print(me.bitches) -- 0
+print(me.charism) -- nil
+me.charism = 0
+print(me.charism) -- 0
+print(me["charism"]) -- 0, its the same
 ```
 
 You can also loop through the tables using the for loop:
