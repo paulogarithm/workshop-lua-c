@@ -13,6 +13,12 @@
 > [`negative tasks`](#negative-tasks) before.
 > Else, go directly to [`ground zero`](#0--prerequisites-met);
 
+> [!IMPORTANT]
+> This workshop is made with **2 STEPS**. It's hard to do both, so you can chose
+> which one you want to do first:
+> - [C in Lua](#c-in-lua)
+> - [Lua in C](#lua-in-c)
+
 > [!NOTE]
 > This part of lua are advanced mechanics, so feel free to ask me if you
 > need help !
@@ -237,7 +243,7 @@ export LUA_CPATH="$(pwd)/?.so;;"
 int luaopen_coolmodule(lua_State *L) // 'coolmodule' is the name of your module !
 {
     // your code
-    return 0; // this number is for the number of variables
+    return 0; // this number is for the number of variables you return
 }
 ```
 
@@ -247,6 +253,8 @@ int luaopen_coolmodule(lua_State *L) // 'coolmodule' is the name of your module 
 |--------|--------------------------------------------------------|
 | apt    | `gcc -shared -fpic module.c -llua5.4 -lm -o module.so` |
 | others | `gcc -shared -fpic module.c -llua -lm -o module.so`    |
+
+# Step 1 - C in your Lua
 
 ## `1` | My First Module
 > ${\textsf{\color{#f00}╸}}$━━━━━━━━━━━━━━━━━━━ `0xp`
@@ -329,7 +337,7 @@ adder:display()     -- 4
 > parametter ?
 
 ## `3` | An Adder with a capital 'A'
-> ${\textsf{\color{#808}━━━━━╸}}$━━━━━━━━━━━━━━ `50xp`
+> ${\textsf{\color{#A2A}━━━━━╸}}$━━━━━━━━━━━━━━ `50xp`
 
 Wow, ok you are definetely getting great at lua, however, would you pass this one ?
 
@@ -358,7 +366,7 @@ print(adder) -- 12
 > I heard about a super metamethod called `__tostring`, it's an absolute banger what can it do, I think you should check for it :eyes:
 
 ## `4` | My Window
-> ${\textsf{\color{#40f}━━━━━━━╸}}$━━━━━━━━━━━━ `70xp`
+> ${\textsf{\color{#62f}━━━━━━━╸}}$━━━━━━━━━━━━ `70xp`
 
 Wait, I just realised something... it's useless to do an adder, since you already have the lua variables to do it !
 
@@ -407,6 +415,8 @@ destructor
 
 Here is a little [video](./assets/video.mp4)
 
+# Step 2 - Lua in your C
+
 ## `5` | The role changed...
 > ${\textsf{\color{#08f}━━━━━━━━━━━━╸}}$━━━━━━━━━━ `120xp`
 
@@ -426,4 +436,91 @@ int main(void)
 }
 ```
 
-1. First, you will create a new state.
+1. First, you will create a `new` lua_State *. Don't forget to `close` it at the end, and `open` the `libs` in your state !
+
+> [!TIP]
+> The name of the functions you will have to use are really intuitive.
+>
+> There are 3 of them, and don't forget to check `lua_` and `luaL_` functions.
+
+2. Now that you have you lua state, you will have to use it to do the following extremely complicated code: `print(1 + 1)`.
+
+It should output 2.
+
+## `6` | Closuring and Tableing
+> ${\textsf{\color{#0A8}━━━━━━━━━━━━━━━╸}}$━━━━━━━ `150xp`
+
+OK so you learnt how to create state and execute lua inside, that's great !
+
+Now let's understand more how it works by pushing stuff in your stack:
+
+1. So first, you will have to push a `string` in your stack and get it back.
+
+The following code should work fine (of course with the right functions/code):
+```c
+int main(void)
+{
+    char const *src = "hello !";
+    /* use a code to push your 'src' string in your state. */;
+
+    char const *dst = /* use a code to get the string from the first state variable. */;
+    printf("%s\n", dst);
+}
+```
+Should output "hello !".
+
+3. So you will have to push an `integer` in your stack and then get it back, but as a `number` (not an integer).
+
+4. Now you will have to push a `c function` in the stack, then execute it. The function will just output `ducks everywhere !`.
+
+Just a hint for you, lua C functions works like this:
+```c
+int myfunc(lua_State *L)
+{
+    // your code
+    return 0; // the number of variable you return.
+}
+```
+
+5. Ok so you have a function, now create a function that will add two number togeter, and return the result.
+
+Your C function needs to have the same behavior as this one:
+```lua
+local function add(a, b)
+    return a + b
+end
+```
+
+6. Whoa well done for the functions, I'm glad you're here so far !
+OK OK last one for the tables and then its another task
+
+Push a `table` in your lua state with 3 fields inside, like this one:
+```lua
+local t = {
+  cat = "hoppy",
+  number = 42,
+  ape = "Alexandre"
+}
+```
+It needs to have the **same keys and same values**.
+
+## `7` | [Do you wanna build a snowman](https://www.youtube.com/watch?v=TeQ_TTyLGMs) ?
+> ${\textsf{\color{#0C4}━━━━━━━━━━━━━━━━━━╸}}$━━━━ `180xp`
+
+To be honnest I don't want either Elza, I just said this so I can use this sentence to write a workshop.
+
+Anyways, you will have to create a snowman in your lua state.
+
+1. My snowman is a `light user data`.
+
+2. It is also really cold so when I print my snowman it should display `A really cold snowman.`
+
+> [!TIP]
+> If you skipped the preceding tasks, know that you will need to use `metatables` for this task.
+>
+> Go see what it is and how to use it, but you should watch one in particulary named `__tostring`.
+
+3. My snowman is also a global variable, so i can access it everywhere.
+   By the end, I should be able to run `print(snowman)` and it should always say `A really cold snowman.`.
+
+
