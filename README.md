@@ -251,6 +251,7 @@ int luaopen_coolmodule(lua_State *L) // 'coolmodule' is the name of your module 
 > [!IMPORTANT]
 > This workshop is made with **2 STEPS**. It's hard to do both, so you can chose
 > which one you want to do first:
+> <img align=right width=10% src="./assets/Untitled.jpg">
 > - [C in Lua](#step-1---c-in-your-lua)
 > - [Lua in C](#step-2---lua-in-your-c)
 
