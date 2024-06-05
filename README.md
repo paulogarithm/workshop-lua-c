@@ -524,6 +524,8 @@ local t = {
 ```
 It needs to have the **same keys and same values**.
 
+If you have finished this exercise, you should see me to show me your code.
+
 ## `7` | [Do you wanna build a snowman](https://www.youtube.com/watch?v=TeQ_TTyLGMs) ?
 > ${\textsf{\color{#0C4}━━━━━━━━━━━━━━━━━━╸}}$━━━━ `180xp`
 
