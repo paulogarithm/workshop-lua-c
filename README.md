@@ -455,7 +455,8 @@ Don't forget to **close** it at the end, and **open the libs** in your state !
 > The name of the functions you will have to use are really intuitive. <br>
 > There are 3 functions to use in the first exercise, and don't forget to check `lua_` AND `luaL_` functions.
 
-2. Now that you have you lua state, you will have to use it to do the following extremely complicated code:
+2. Now that you have you lua state, you will have to use it to do execute lua code.
+3. Find which function to use to execute the following code in your state:
 ```lua
 print(1 + 1)
 ```
