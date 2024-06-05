@@ -286,7 +286,7 @@ foo() -- Hello world !
 
 3. Perfect ! Now return a table
 
-> [!INFO]
+> [!NOTE]
 > (if you don't know what a table is, you should definitely look back at [`negative tasks`](#negative-tasks))
 
 You table should contains 1 little method and 1 little variable:
