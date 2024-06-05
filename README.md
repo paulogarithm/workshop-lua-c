@@ -31,11 +31,16 @@ local num = 3
 local str = "hello"
 ```
 
-Lua is not strict typed, however, you can have a warning on the vscode
-if your variable changes type
+Lua is not strict typed, however, it is **not** recommanded to change types
+and you can get a warning.
 ```lua
 local a = 42
 a = "foo" -- warning
+```
+
+Without the local keyword, your variable is **global**:
+```lua
+a = 42
 ```
 
 And now you also learnt above how to do a comment !
