@@ -446,6 +446,11 @@ int main(void)
 }
 ```
 
+Then compile it like this:
+```
+$ gcc foo.c -llua -lm
+```
+
 ### Walkthrough
 
 1. First, you will create a **new** lua_State *. <br>
