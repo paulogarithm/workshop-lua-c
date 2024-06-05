@@ -229,7 +229,7 @@ Finally ! Now you can start the workshop !
 | dnf    | `sudo dnf install lua-devel -y`  |
 | apt    | `sudo apt install liblua5.4-dev` |
 | pacman | `sudo pacman -Syu lua`           |
-| brew   | `sudo brew install lua`          |
+| brew   | `brew install lua@5.4`           |
 
 2. Export the lua cpath like so
 ```sh
@@ -251,11 +251,11 @@ int luaopen_coolmodule(lua_State *L) // 'coolmodule' is the name of your module 
 
 4. Compile the lua using the following table:
 
-|        | compilation command                                                                                                                    |
-|--------|----------------------------------------------------------------------------------------------------------------------------------------|
-| apt    | `gcc -shared -fpic module.c -llua5.4 -lm -o module.so`                                                                                 |
-| brew   | `gcc -shared -fpic module.c -I/opt/homebrew/Cellar/lua/5.4.6/include/lua -L/opt/homebrew/Cellar/lua/5.4.6/lib -llua -lm -o module.so`  |
-| others | `gcc -shared -fpic module.c -llua -lm -o module.so`                                                                                    |
+|        | compilation command                                                                                        |
+|--------|------------------------------------------------------------------------------------------------------------|
+| apt    | `gcc -shared -fpic module.c -llua5.4 -lm -o module.so`                                                     |
+| brew   | `gcc -I/opt/homebrew/Cellar/lua/5.4.6/include/lua -bundle -undefined dynamic_lookup module.c -o module.so` |
+| others | `gcc -shared -fpic module.c -llua -lm -o module.so`                                                        |
 
 > [!IMPORTANT]
 > This workshop is made with **2 STEPS**. It's hard to do both, so you can chose
