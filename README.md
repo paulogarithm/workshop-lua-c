@@ -251,10 +251,11 @@ int luaopen_coolmodule(lua_State *L) // 'coolmodule' is the name of your module 
 
 4. Compile the lua using the following table:
 
-|        | compilation command                                    |
-|--------|--------------------------------------------------------|
-| apt    | `gcc -shared -fpic module.c -llua5.4 -lm -o module.so` |
-| others | `gcc -shared -fpic module.c -llua -lm -o module.so`    |
+|        | compilation command                                                                                                                    |
+|--------|----------------------------------------------------------------------------------------------------------------------------------------|
+| apt    | `gcc -shared -fpic module.c -llua5.4 -lm -o module.so`                                                                                 |
+| brew   | `gcc -shared -fpic module.c -I/opt/homebrew/Cellar/lua/5.4.6/include/lua -L/opt/homebrew/Cellar/lua/5.4.6/lib -llua -lm -o module.so`  |
+| others | `gcc -shared -fpic module.c -llua -lm -o module.so`                                                                                    |
 
 > [!IMPORTANT]
 > This workshop is made with **2 STEPS**. It's hard to do both, so you can chose
